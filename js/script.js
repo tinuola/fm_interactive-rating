@@ -31,8 +31,21 @@ const deselectOtherRatings = index => {
 }
 
 
+const checkSelectedState = () => {
+  for(let rating of ratingItems){
+    const isSelected = rating.classList.contains('rating-item--selected')
+    if(isSelected){
+      console.log('selected')
+      return true;
+    }
+  }
+}
+
+
 submitBtn.addEventListener('click', function(){
-  if(ratingValue){
+  let hasRating = checkSelectedState()
+
+  if(ratingValue && hasRating){
     displayRating.textContent = `You selected ${ratingValue} out of 5`
     ratingOpen.style.display = 'none'
     ratingClose.style.display = 'block'
