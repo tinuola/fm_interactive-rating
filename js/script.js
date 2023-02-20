@@ -32,8 +32,10 @@ const deselectOtherRatings = index => {
 
 
 submitBtn.addEventListener('click', function(){
-  displayRating.textContent = `You selected ${ratingValue} out of 5`
-  ratingOpen.style.display = 'none'
-  ratingClose.style.display = 'block'
+  if(ratingValue){
+    displayRating.textContent = `You selected ${ratingValue} out of 5`
+    ratingOpen.style.display = 'none'
+    ratingClose.style.display = 'block'
+  }
 })
 
