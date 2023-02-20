@@ -142,6 +142,7 @@ button:hover {
 
 .rating-msg {
   background: var(--dark-gray);
+  color: var(--primary-orange);
   display: inline-block;
   margin-bottom: 1.75rem;
   padding: 0.5rem 1.25rem;
@@ -149,7 +150,6 @@ button:hover {
 }
 
 .rating-msg p {
-  color: var(--primary-orange);
   display: inline;
 }
 
