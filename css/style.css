@@ -50,11 +50,17 @@ body {
 }
 
 .component-wrapper {
-  max-width: 360px;
+  max-width: 330px;
   background: var(--dark-blue);
   border-radius: 1.5rem;
   overflow: hidden;
   padding: 2rem 1.5rem;
+}
+
+@media (min-width: 400px) {
+  .component-wrapper{
+    max-width: 360px;
+  }
 }
 
 .component-wrapper h2 {
