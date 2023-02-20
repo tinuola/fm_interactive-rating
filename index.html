@@ -6,43 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
     <!-- Google Fonts -->
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Project Stylesheets -->
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
     <title>Interactive Rating Component | Frontend Mentor</title>
   </head>
 <body>
-
-  <h1>Interactive Rating Component  - A Frontend Mentor Project</h1>
-  <!-- Rating state start -->
-
-  How did we do?
-
-  Please let us know how we did with your support request. All feedback is appreciated 
-  to help us improve our offering!
-
-  1 2 3 4 5
-
-  Submit
-
-  <!-- Rating state end -->
-
-  <!-- Thank you state start -->
-
-  You selected <!-- Add rating here --> out of 5
-
-  Thank you!
-
-  We appreciate you taking the time to give a rating. If you ever need more support, 
-  don’t hesitate to get in touch!
-
-  <!-- Thank you state end -->
-
-  
-  <div class="fm-attribution-row">
-    <p class="fm-attribution">Challenge by <a href="" target="_blank">Frontend Mentor</a></p>
-    <p class="fm-attribution">Coded by <a href="" target="_blank">TechTinu</a></p>
-  </div>
+  <main class="container">
+    <h1 class="sr-only">Interactive Rating Component  - A Frontend Mentor Project</h1>
+    <section class="component-wrapper wrapper-rating">
+      <div class="icon-wrapper">
+        <img src="./assets/images/icon-star.svg" alt="Star icon">
+      </div>
+      <h2>How did we do?</h2>
+      <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+      <ul class="rating-list">
+        <li class="rating-item">1</li>
+        <li class="rating-item">2</li>
+        <li class="rating-item">3</li>
+        <li class="rating-item">4</li>
+        <li class="rating-item">5</li>
+      </ul>
+      <button type="submit">Submit</button>
+    </section><br>
+    <section class="component-wrapper wrapper-thankyou">
+      <img src="./assets/images/illustration-thank-you.svg" alt="Thank You illustration">
+      <div class="rating-msg"></div>
+      <h2>Thank you!</h2>
+      <p> We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch!</p>
+    </section>
+  </main>
+  <footer class="fm-attribution-row">
+    <p class="fm-attribution">Challenge by <a href="https://www.frontendmentor.io/challenges/interactive-rating-component-koxpeBUmI" target="_blank">Frontend Mentor</a></p>
+    <p class="fm-attribution">Coded by <a href="https://github.com/tinuola/fm_interactive-rating" target="_blank">TechTinu</a></p>
+  </footer>
 </body>
 </html>
