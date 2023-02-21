@@ -9,8 +9,14 @@ Users should be able to:
 - Select and submit a number rating
 - See the "Thank you" card state after submitting a rating
 
+
 ### Solution
 Live Site: [https://tinuola.github.io/fm_interactive-rating/](https://tinuola.github.io/fm_interactive-rating/)
+
+
+### Potential Refinements
+- Add error message when no rating is selected on `Submit` button click
+- Add `Close` button/icon to _Thank You_ view that resets component
 
 
 ### Tools & Resources

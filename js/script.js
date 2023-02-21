@@ -35,7 +35,6 @@ const checkSelectedState = () => {
   for(let rating of ratingItems){
     const isSelected = rating.classList.contains('rating-item--selected')
     if(isSelected){
-      console.log('selected')
       return true;
     }
   }
