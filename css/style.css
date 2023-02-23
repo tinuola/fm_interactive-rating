@@ -77,10 +77,6 @@ body {
   margin-bottom: 1.25rem;
 }
 
-.wrapper-rating {
-
-}
-
 .rating-list {
   display: flex;
   justify-content: space-between;
@@ -98,17 +94,17 @@ body {
   cursor: pointer;
 }
 
-.rating-item--focus {
+.rating-item--initial-state {
   background: var(--dark-gray);
   color: var(--medium-gray);
 }
 
-.rating-item--focus:hover {
+.rating-item--initial-state:hover {
   background: var(--medium-gray);
   color: var(--white);
 }
 
-.rating-item--selected {
+.rating-item--selected-state {
   background: var(--primary-orange);
 }
 

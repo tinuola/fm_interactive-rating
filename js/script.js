@@ -1,39 +1,39 @@
-const ratingItems = document.querySelectorAll('.rating-item')
+const ratings = document.querySelectorAll('.rating-item')
 
-const ratingOpen = document.querySelector('.wrapper-rating')
+const ratingCardOpen = document.querySelector('.wrapper-rating')
 
-const ratingClose = document.querySelector('.wrapper-thankyou')
+const ratingCardClose = document.querySelector('.wrapper-thankyou')
 
-const displayRating = document.querySelector('.rating-msg')
+const ratingMsg = document.querySelector('.rating-msg')
 
 const submitBtn = document.querySelector('.submit-btn')
 
 let ratingValue = ''
 
 
-ratingItems.forEach( (rating,idx) => {
+ratings.forEach( (rating,idx) => {
   rating.addEventListener('click', function(){
     ratingValue = rating.innerText
-    rating.classList.toggle('rating-item--focus')
-    rating.classList.toggle('rating-item--selected')
+    rating.classList.toggle('rating-item--initial-state')
+    rating.classList.toggle('rating-item--selected-state')
     deselectOtherRatings(idx)
   })
 })
 
 
 const deselectOtherRatings = index => {
-  ratingItems.forEach( (rating, idx) => {
+  ratings.forEach( (rating, idx) => {
     if(idx !== index){
-      rating.classList.remove('rating-item--selected')
-      rating.classList.add('rating-item--focus')
+      rating.classList.remove('rating-item--selected-state')
+      rating.classList.add('rating-item--initial-state')
     }
   })
 }
 
 
 const checkSelectedState = () => {
-  for(let rating of ratingItems){
-    const isSelected = rating.classList.contains('rating-item--selected')
+  for(let rating of ratings){
+    const isSelected = rating.classList.contains('rating-item--selected-state')
     if(isSelected){
       return true;
     }
@@ -45,9 +45,9 @@ submitBtn.addEventListener('click', function(){
   let hasRating = checkSelectedState()
 
   if(ratingValue && hasRating){
-    displayRating.textContent = `You selected ${ratingValue} out of 5`
-    ratingOpen.style.display = 'none'
-    ratingClose.style.display = 'block'
+    ratingMsg.textContent = `You selected ${ratingValue} out of 5`
+    ratingCardOpen.style.display = 'none'
+    ratingCardClose.style.display = 'block'
   }
 })
 
