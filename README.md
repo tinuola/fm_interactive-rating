@@ -1,5 +1,5 @@
-# Frontend Mentor: Challenge Name
-This is a solution to the _[Interactive Rating Component](https://www.frontendmentor.io/challenges/interactive-rating-component-koxpeBUmI)_ challenge on Frontend Mentor. Frontend Mentor challenges help improve coding skills through building realistic projects.
+# Frontend Mentor: Interactive Rating Component
+Solution to the _[Interactive Rating Component](https://www.frontendmentor.io/challenges/interactive-rating-component-koxpeBUmI)_ challenge on Frontend Mentor.
 
 
 ### Challenge
@@ -14,9 +14,10 @@ Users should be able to:
 Live Site: [https://tinuola.github.io/fm_interactive-rating/](https://tinuola.github.io/fm_interactive-rating/)
 
 
-### Potential Refinements
-- Add error message when no rating is selected on `Submit` button click
-- Add `Close` button/icon to _Thank You_ view that resets component
+### Potential Enhancement
+- Add animation to component elements
+- Add error message on `Submit` when no rating is selected
+- Add `Close` button/icon to _Thank You_ view to reset component
 
 
 ### Tools & Resources
