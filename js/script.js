@@ -21,6 +21,7 @@ ratings.forEach( (rating,idx) => {
 })
 
 
+// Ensure only one rating has "selected-state"
 const deselectOtherRatings = index => {
   ratings.forEach( (rating, idx) => {
     if(idx !== index){
@@ -31,6 +32,7 @@ const deselectOtherRatings = index => {
 }
 
 
+// Confirm that a rating has been selected
 const checkSelectedState = () => {
   for(let rating of ratings){
     const isSelected = rating.classList.contains('rating-item--selected-state')
