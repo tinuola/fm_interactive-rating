@@ -77,6 +77,24 @@ body {
   margin-bottom: 1.25rem;
 }
 
+input[type="radio"] {
+  cursor: pointer; 
+    position: relative;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; 
+    position: relative;
+}
+
+input[type='radio']::before{ 
+  content: attr(data-number);     
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .rating-list {
   display: flex;
   justify-content: space-between;
