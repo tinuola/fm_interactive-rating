@@ -12,6 +12,10 @@
     <!-- Project Stylesheets -->
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/b0d71a7b81.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Interactive Rating Component | Frontend Mentor</title>
   </head>
 <body>
@@ -43,13 +47,14 @@
           <label for="rating-1" class="sr-only">5</label>
           <input type="radio" name="rating" value="rating-5" data-number="5" id="rating-5" class="rating-item rating--initial-state">
         </div>
-        <button class="submit-btn" type="submit">Submit</button>
+        <button id="submit-btn" type="submit">Submit</button>
       </form>
 
       <span id="error-msg">Please select a rating.</span>
     </section>
     
     <section class="component-wrapper wrapper-thankyou">
+      <button class="close-icon-btn" id="close-btn"><i class="fa-regular fa-circle-xmark fa-xl"></i></button>
       <img src="./assets/images/illustration-thank-you.svg" alt="Thank You illustration">
       <div class="rating-msg"><p>You selected 4 out of 5</p></div>
       <h2>Thank You!</h2>
