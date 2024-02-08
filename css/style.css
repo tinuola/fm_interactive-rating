@@ -73,8 +73,24 @@ body {
 .component-wrapper p {
   color: var(--light-gray);
   line-height: 1.5;
-  font-size: 14px;
+  font-size: .875rem;
   margin-bottom: 1.25rem;
+}
+
+input[type="radio"] {
+    cursor: pointer; 
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; 
+}
+
+input[type='radio']::before{ 
+  content: attr(data-number);     
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .rating-list {
@@ -83,32 +99,22 @@ body {
   margin-bottom: 1.5rem;
 }
 
-.rating-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  font-size: 13px;
-  cursor: pointer;
-}
-
-.rating-item--initial-state {
+.rating--initial-state {
   background: var(--dark-gray);
   color: var(--medium-gray);
 }
 
-.rating-item--initial-state:hover {
+.rating--initial-state:hover {
   background: var(--medium-gray);
   color: var(--white);
 }
 
-.rating-item--selected-state {
+input[type='radio']:checked {
   background: var(--primary-orange);
+  color: var(--darker-blue);
 }
 
-button {
+#submit-btn {
   width: 100%;
   padding: .875rem;
   border: 0;
@@ -122,14 +128,25 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+#submit-btn:hover {
   background: var(--white);
   color: var(--primary-orange);
+}
+
+#error-msg {
+  text-align: center;
+  margin-top: .75rem;
+  color: var(--white);
+  font-size: .875rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  display: none;
 }
 
 .wrapper-thankyou {
   text-align: center;
   display: none;
+  position: relative;
 }
 
 .wrapper-thankyou img {
@@ -149,18 +166,33 @@ button:hover {
   display: inline;
 }
 
+.close-icon-btn {
+  position: absolute;
+  right: 28px;
+  top: 28px;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  color: var(--light-gray);
+}
+
+.close-icon-wrapper i {
+  /* color: var(--light-gray); */
+}
+
 .fm-attribution-row {
   padding: 2rem 0;
 }
 
 .fm-attribution {
   font-size: 12px;
+  font-weight: 300;
   line-height: 1.5;
   letter-spacing: 1px;
-  color: var(--light-gray);
+  color: var(--white);
   text-align: center;
 }
 
 .fm-attribution a {
-  color: var(--light-gray);
+  color: var(--white);
 }

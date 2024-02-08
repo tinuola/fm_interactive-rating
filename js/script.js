@@ -6,50 +6,74 @@ const ratingCardClose = document.querySelector('.wrapper-thankyou')
 
 const ratingMsg = document.querySelector('.rating-msg')
 
-const submitBtn = document.querySelector('.submit-btn')
+const errorMsg = document.getElementById('error-msg')
+
+const submitBtn = document.getElementById('submit-btn')
+
+const closeBtn = document.getElementById('close-btn')
+
+
+/****  States ****/
 
 let ratingValue = ''
+let errorState = false
 
 
-ratings.forEach( (rating,idx) => {
-  rating.addEventListener('click', function(){
-    ratingValue = rating.innerText
-    rating.classList.toggle('rating-item--initial-state')
-    rating.classList.toggle('rating-item--selected-state')
-    deselectOtherRatings(idx)
+
+/****  Event Listeners ****/
+
+submitBtn.addEventListener('click', function(e){
+  e.preventDefault()
+
+  ratings.forEach( (rating) => {
+    if(rating.checked) {
+      ratingValue = rating.getAttribute('data-number')
+      displayResult(ratingValue)
+    } else {
+      displayError()
+    }
   })
 })
 
 
-// Ensure only one rating has "selected-state"
-const deselectOtherRatings = index => {
-  ratings.forEach( (rating, idx) => {
-    if(idx !== index){
-      rating.classList.remove('rating-item--selected-state')
-      rating.classList.add('rating-item--initial-state')
-    }
-  })
-}
+closeBtn.addEventListener('click', resetApp)
 
 
-// Confirm that a rating has been selected
-const checkSelectedState = () => {
-  for(let rating of ratings){
-    const isSelected = rating.classList.contains('rating-item--selected-state')
-    if(isSelected){
-      return true;
-    }
-  }
-}
-
-
-submitBtn.addEventListener('click', function(){
-  let hasRating = checkSelectedState()
-
-  if(ratingValue && hasRating){
-    ratingMsg.textContent = `You selected ${ratingValue} out of 5`
-    ratingCardOpen.style.display = 'none'
-    ratingCardClose.style.display = 'block'
-  }
+// Clear error message when a rating is selected
+ratings.forEach( rating => {
+  rating.addEventListener('click', clearError)
 })
 
+
+
+/****  Methods ****/
+
+function displayResult(num){
+  ratingMsg.textContent = `You selected ${num} out of 5`
+  ratingCardOpen.style.display = 'none'
+  ratingCardClose.style.display = 'block'
+}
+
+function displayError(){
+    errorState = true
+    errorMsg.style.display = 'block'
+}
+
+function clearError(){
+    errorMsg.style.display = 'none'
+    errorState = false
+}
+
+function resetApp(){
+  ratingCardOpen.style.display = 'block'
+  ratingCardClose.style.display = 'none'
+  ratingValue = ''
+
+  ratings.forEach( rating => {
+    if(rating.checked) {
+      rating.checked = false
+    }
+  })
+
+  clearError()
+}

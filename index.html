@@ -12,37 +12,62 @@
     <!-- Project Stylesheets -->
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/b0d71a7b81.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Interactive Rating Component | Frontend Mentor</title>
   </head>
 <body>
   <main class="container">
+    
     <h1 class="sr-only">Interactive Rating Component  - A Frontend Mentor Project</h1>
+    
     <section class="component-wrapper wrapper-rating">
       <div class="icon-wrapper">
         <img src="./assets/images/icon-star.svg" alt="Star icon">
       </div>
       <h2>How did we do?</h2>
       <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
-      <ul class="rating-list">
-        <li class="rating-item rating-item--initial-state">1</li>
-        <li class="rating-item rating-item--initial-state">2</li>
-        <li class="rating-item rating-item--initial-state">3</li>
-        <li class="rating-item rating-item--initial-state">4</li>
-        <li class="rating-item rating-item--initial-state">5</li>
-      </ul>
-      <button class="submit-btn" type="submit">Submit</button>
-    </section><br>
+      
+      <form>
+        <div class="rating-list">
+          <label for="rating-1" class="sr-only">1</label>
+          <input type="radio" name="rating" value="rating-1" data-number="1" id="rating-1" class="rating-item rating--initial-state">
+          
+          <label for="rating-1" class="sr-only">2</label>
+          <input type="radio" name="rating" value="rating-2" data-number="2" id="rating-2" class="rating-item rating--initial-state">
+
+          <label for="rating-1" class="sr-only">3</label>
+          <input type="radio" name="rating" value="rating-3" data-number="3" id="rating-3" class="rating-item rating--initial-state">
+        
+          <label for="rating-1" class="sr-only">4</label>
+          <input type="radio" name="rating" value="rating-4" data-number="4" id="rating-4" class="rating-item rating--initial-state">
+        
+          <label for="rating-1" class="sr-only">5</label>
+          <input type="radio" name="rating" value="rating-5" data-number="5" id="rating-5" class="rating-item rating--initial-state">
+        </div>
+        <button id="submit-btn" type="submit">Submit</button>
+      </form>
+
+      <span id="error-msg">Please select a rating.</span>
+    </section>
+    
     <section class="component-wrapper wrapper-thankyou">
+      <button class="close-icon-btn" id="close-btn"><i class="fa-regular fa-circle-xmark fa-xl"></i></button>
       <img src="./assets/images/illustration-thank-you.svg" alt="Thank You illustration">
       <div class="rating-msg"><p>You selected 4 out of 5</p></div>
       <h2>Thank You!</h2>
       <p> We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch!</p>
     </section>
+  
   </main>
+
   <footer class="fm-attribution-row">
     <p class="fm-attribution">Challenge by <a href="https://www.frontendmentor.io/challenges/interactive-rating-component-koxpeBUmI" target="_blank">Frontend Mentor</a></p>
     <p class="fm-attribution">Coded by <a href="https://github.com/tinuola/fm_interactive-rating" target="_blank">TechTinu</a></p>
   </footer>
+  
   <script src="js/script.js"></script>
 </body>
 </html>
