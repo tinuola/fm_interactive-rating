@@ -73,7 +73,7 @@ body {
 .component-wrapper p {
   color: var(--light-gray);
   line-height: 1.5;
-  font-size: 14px;
+  font-size: .875rem;
   margin-bottom: 1.25rem;
 }
 
@@ -131,6 +131,16 @@ button {
 button:hover {
   background: var(--white);
   color: var(--primary-orange);
+}
+
+#error-msg {
+  text-align: center;
+  margin-top: .75rem;
+  color: var(--white);
+  font-size: .875rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  display: none;
 }
 
 .wrapper-thankyou {
