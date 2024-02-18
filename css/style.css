@@ -130,22 +130,27 @@ input[type='radio']:checked {
   color: var(--darker-blue);
 }
 
-#submit-btn {
+.submit-btn {
   width: 100%;
   padding: .875rem .875rem .675rem .875rem;
   border: 0;
   border-radius: 1.25rem;
-  background: var(--primary-orange);
   text-transform: uppercase;
   letter-spacing: 2px;
   font-family: inherit;
   font-size: .875rem;
   font-weight: 600;
-  color: var(--white);
+  background-color: var(--dark-gray);
+  color: var(--medium-gray);
   cursor: pointer;
 }
 
-#submit-btn:hover {
+.active-btn {
+  background: var(--primary-orange);
+  color: var(--dark-blue);
+}
+
+.active-btn:hover {
   background: var(--white);
   color: var(--primary-orange);
 }

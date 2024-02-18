@@ -12,15 +12,12 @@ const submitBtn = document.getElementById('submit-btn')
 
 const closeBtn = document.getElementById('close-btn')
 
-
-/****  States ****/
-
 let ratingValue = ''
-let errorState = false
 
 
-
-/****  Event Listeners ****/
+/**********************/
+/** Event Listeners **/
+/*********************/
 
 submitBtn.addEventListener('click', function(e){
   e.preventDefault()
@@ -30,23 +27,21 @@ submitBtn.addEventListener('click', function(e){
       ratingValue = rating.getAttribute('data-number')
       displayResult(ratingValue)
     } else {
-      displayError()
+      errorMsg.style.display = 'block'
     }
   })
 })
 
-
 closeBtn.addEventListener('click', resetApp)
 
-
-// Clear error message when a rating is selected
 ratings.forEach( rating => {
-  rating.addEventListener('click', clearError)
+  rating.addEventListener('click', enableSubmit)
 })
 
 
-
-/****  Methods ****/
+/*************/
+/** Methods **/
+/*************/
 
 function displayResult(num){
   ratingMsg.textContent = `You selected ${num} out of 5`
@@ -54,19 +49,16 @@ function displayResult(num){
   ratingCardClose.style.display = 'block'
 }
 
-function displayError(){
-    errorState = true
-    errorMsg.style.display = 'block'
-}
-
-function clearError(){
-    errorMsg.style.display = 'none'
-    errorState = false
+function enableSubmit(){
+  errorMsg.style.display = 'none'
+  submitBtn.classList.add('active-btn')
 }
 
 function resetApp(){
+  submitBtn.classList.remove('active-btn')
   ratingCardOpen.style.display = 'block'
   ratingCardClose.style.display = 'none'
+  errorMsg.style.display = 'none'
   ratingValue = ''
 
   ratings.forEach( rating => {
@@ -74,6 +66,4 @@ function resetApp(){
       rating.checked = false
     }
   })
-
-  clearError()
 }
