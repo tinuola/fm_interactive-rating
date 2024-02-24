@@ -118,6 +118,7 @@ input[type='radio']::before{
 .rating--initial-state {
   background: var(--dark-gray);
   color: var(--medium-gray);
+  transition: all 0.3s ease;
 }
 
 .rating--initial-state:hover {
@@ -148,6 +149,7 @@ input[type='radio']:checked {
 .active-btn {
   background: var(--primary-orange);
   color: var(--dark-blue);
+  transition: all 0.3s ease;
 }
 
 .active-btn:hover {
